@@ -1,0 +1,31 @@
+/* .Header {
+  padding-top: 4.2rem;
+  background: url(../../../assets/images/bg-desktop-light.jpg);
+  min-height: 300px;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+}
+.Header .cw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.darked Header {
+  padding-top: 3.8rem;
+  background: url(../../../assets/images/bg-desktop-dark.jpg);
+  min-height: 300px;
+  background-size: cover;
+}
+@media screen and (max-width: 375px) {
+  .Header {
+    padding-top: 2.2rem;
+    background: url(../../../assets/images/bg-mobile-light.jpg);
+    min-height: 200px;
+  }
+  .darked Header {
+    padding-top: 2.2rem;
+    background: url(../../../assets/images/bg-mobile-dark.jpg);
+    min-height: 200px;
+  }
+} */
