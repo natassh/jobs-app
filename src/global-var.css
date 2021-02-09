@@ -8,6 +8,7 @@
   --second-color-hover: #C5C9F4;
   --second-bg: #979797;
   --main-color-hover: #939BF4;
+  --border-color: #E7E8E9;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -29,6 +30,7 @@ body.darked {
     --second-color-hover: #525861;
     --second-bg: #313743;
     --main-color-hover: #939BF4;
+    --border-color: #E7E8E9;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
@@ -40,12 +42,6 @@ body.darked {
     --regular: 400;
     --font-size: 1rem;
 }
-.lighted .ToogleColorTheme button {
-  transform: translateX(-15px);
-}
-.darked .ToogleColorTheme button {
-  transform: translateX(8px);
-}
 body.lighted {
   --bg: #F2F2F2;
   --white-color: #fff;
@@ -56,6 +52,7 @@ body.lighted {
   --second-color-hover: #C5C9F4;
   --second-bg: #979797;
   --main-color-hover: #939BF4;
+  --border-color: #E7E8E9;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -67,9 +64,6 @@ body.lighted {
   --regular: 400;
   --font-size: 1rem;
 }
-
-
-
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #121721;
@@ -81,6 +75,7 @@ body.lighted {
     --second-color-hover: #525861;
     --second-bg: #313743;
     --main-color-hover: #939BF4;
+    --border-color: #E7E8E9;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;

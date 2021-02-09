@@ -1,5 +1,5 @@
 .ToogleColorTheme {
-    background-color: #fff;
+    background-color: var(--white-color);
     border:none;
     border-radius: 5rem;
     cursor: pointer;
@@ -7,6 +7,7 @@
     align-items: center;
     width: 3rem;
     height: 1.6rem;
+    margin-right: 2rem;
 }
 .ToogleColorTheme button {
     display: inline-block;
@@ -15,6 +16,7 @@
     border-radius: 5rem;
     background-color: var(--main-color);
     border: none;
+    transition: transform 0.4s ease;
 }
 .ToogleColorTheme:hover button {
     background-color: var(--main-color-hover);
@@ -28,5 +30,10 @@
     display: block;
     position: relative;
     left: 2rem;
-
+}
+.lighted .ToogleColorTheme button {
+    transform: translateX(-15px);
+}
+.darked .ToogleColorTheme button {
+    transform: translateX(8px);
 }

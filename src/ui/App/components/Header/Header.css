@@ -4,21 +4,22 @@
   background-size: cover;
   width: 100%;
   padding-top: 2.687rem;
+  position: relative;
+}
+.Header .mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .Header h1 {
   margin:0;
   padding:0;
 }
-.Header .cw {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media screen and (min-width: 1441px) {
+/* @media screen and (min-width: 1441px) {
   .Header {
     min-height: 285px;
   }
-}
+} */
 /* @media screen and (max-width: 768px) {
   .Header {
     min-height: 285px;
