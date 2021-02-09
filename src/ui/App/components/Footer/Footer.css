@@ -1,0 +1,43 @@
+.Footer {
+  position: relative;
+  top: 13rem;
+  margin: 0;
+  padding: 0;
+}
+.Footer ul {
+  margin:0;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Footer li {
+  list-style: none;
+  margin-right: 1.125rem;
+}
+.Footer li:last-child {
+  margin-right: 0;
+}
+.Footer li a {
+  color: var(--text);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.Footer .tw2:hover {
+  color: var(--twitter-color)
+}
+.Footer .lk:hover {
+  color: var(--linkedin-color)
+}
+.Footer .gh:hover {
+  color: var(--github-color)
+}
+.Footer .myweb:hover {
+  color: var(--myweb-color)
+}
+@media screen and (max-width: 375px) {
+  .Footer {
+    top: 9rem;
+  }
+}
+

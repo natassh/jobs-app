@@ -1,0 +1,118 @@
+:root {
+  --bg: #F2F2F2;
+  --white-color: #fff;
+  --second-color-text: #6E8098;
+  --primary-color-text: #19202D;
+  --main-color: #5964E0;
+  --second-color: #EEEFFC;
+  --second-color-hover: #C5C9F4;
+  --second-bg: #979797;
+  --main-color-hover: #939BF4;
+
+  --twitter-color: #00ACEE;
+  --linkedin-color: #0E76A8;
+  --github-color: #000;
+  --myweb-color: #ff8080;
+
+  --main-font: 'Kumbh Sans', sans-serif;
+  --bold: 700;
+  --regular: 400;
+  --font-size: 1rem;
+}
+body.darked {
+  --bg: #121721;
+    --white-color: #fff;
+    --second-color-text: #6E8098;
+    --primary-color-text: #fff;
+    --main-color: #5964E0;
+    --second-color: #303642;
+    --second-color-hover: #525861;
+    --second-bg: #313743;
+    --main-color-hover: #939BF4;
+
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+
+    --main-font: 'Kumbh Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1rem;
+}
+.lighted .ToogleColorTheme button {
+  transform: translateX(-15px);
+}
+.darked .ToogleColorTheme button {
+  transform: translateX(8px);
+}
+body.lighted {
+  --bg: #F2F2F2;
+  --white-color: #fff;
+  --second-color-text: #6E8098;
+  --primary-color-text: #19202D;
+  --main-color: #5964E0;
+  --second-color: #EEEFFC;
+  --second-color-hover: #C5C9F4;
+  --second-bg: #979797;
+  --main-color-hover: #939BF4;
+
+  --twitter-color: #00ACEE;
+  --linkedin-color: #0E76A8;
+  --github-color: #000;
+  --myweb-color: #ff8080;
+
+  --main-font: 'Kumbh Sans', sans-serif;
+  --bold: 700;
+  --regular: 400;
+  --font-size: 1rem;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121721;
+    --white-color: #fff;
+    --second-color-text: #6E8098;
+    --primary-color-text: #fff;
+    --main-color: #5964E0;
+    --second-color: #303642;
+    --second-color-hover: #525861;
+    --second-bg: #313743;
+    --main-color-hover: #939BF4;
+
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+
+    --main-font: 'Kumbh Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1rem;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F2;
+    --white-color: #fff;
+    --second-color-text: #6E8098;
+    --primary-color-text: #19202D;
+    --main-color: #5964E0;
+    --second-color: #EEEFFC;
+    --second-color-hover: #C5C9F4;
+    --second-bg: #979797;
+    --main-color-hover: #939BF4;
+  
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+  
+    --main-font: 'Kumbh Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1rem;
+  }
+}

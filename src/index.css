@@ -1,13 +1,42 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import 'global-var.css';
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  font-weight: var(--regular);
+  background-color: var(--bg);
 }
+.cw {
+  width: 1110px;
+  margin: 0 auto;
+}
+/* RWD */
+/* @media screen and (max-width: 1200px) {
+  .cw {
+    width: 45.5%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cw {
+    width: 53.5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cw {
+    width: 70.5%;
+  }
+}
+  @media screen and (max-width: 425px) {
+  .cw {
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+  }
+} */

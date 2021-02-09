@@ -1,0 +1,32 @@
+.ToogleColorTheme {
+    background-color: #fff;
+    border:none;
+    border-radius: 5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: 1.6rem;
+}
+.ToogleColorTheme button {
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 5rem;
+    background-color: var(--main-color);
+    border: none;
+}
+.ToogleColorTheme:hover button {
+    background-color: var(--main-color-hover);
+}
+.sunIcon {
+    display: block;
+    position: relative;
+    left: -2rem;
+}
+.moonIcon {
+    display: block;
+    position: relative;
+    left: 2rem;
+
+}

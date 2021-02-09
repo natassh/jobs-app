@@ -9,18 +9,14 @@ const Home: React.FC  = () => {
   return (
     <>
       <main>
-        hola home
-        {/* <FormCocktail className="FormCocktail" />
-        {recipes.length > 0 && <RecipeList recipes={recipes} />} */}
+        <div className="cw">
+          hola home
+          {/* <FormCocktail className="FormCocktail" />
+          {recipes.length > 0 && <RecipeList recipes={recipes} />} */}
+        </div>
       </main>
     </>
   );
 };
 
 export default Home;
-
-
-
-
-
-
