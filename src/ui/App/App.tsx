@@ -5,18 +5,21 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 import ThemeProvider from '../modules/color-theme-scheme/contexts/ThemeContext';
+import JobProvider from '../modules/jobs/contexts/JobContext';
 
 const App = () => {
   return (
     <div className="App">
       <ThemeProvider>
-        <Router>
-          <Header/>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
-          <Footer />
-        </Router>
+        <JobProvider>
+          <Router>
+            <Header/>
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+            <Footer />
+          </Router>
+        </JobProvider>
       </ThemeProvider>
     </div>
   );
