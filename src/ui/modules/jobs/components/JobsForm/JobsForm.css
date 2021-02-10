@@ -1,7 +1,8 @@
 .JobsForm {
   background-color: var(--white-color);
   display: grid;
-  grid-template-columns:  2fr 1fr 1fr;
+  /* grid-template-columns:  2fr 1fr 1fr; */
+  grid-template-columns:  463px 300px 345px;
   grid-template-rows: 1fr;
   border-radius: 6px;
   position: absolute;
@@ -18,10 +19,17 @@
 }
 .JobsForm > div:last-child {
   border-right: none;
+  padding-left: 28px;
+  padding-right: 16px;
+  justify-content: space-between;
 }
 .JobsForm > div input {
   border: none;
   padding-left: 16px;
+  
+}
+.JobsForm > div input {
+  caret-color : var(--main-color);
 }
 .JobsForm input[type="text"] {
   width: 100%;
@@ -48,4 +56,65 @@
   width: 17px;
   height: 24px;
   background-image: url(../../../../assets/images/icon-location.svg);
+}
+.JobsForm input[type="checkbox"] {
+  display: none;
+}
+.JobsForm > div:last-child label {
+  position: relative;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  font-weight: var(--bold);
+  color: var(--primary-color-text);
+}
+
+.JobsForm > div:last-child label:before{
+  display: inline-block;
+  content:'';
+  border: none;
+  border-radius: 3px;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1rem;
+  background: var(--ckekbox-color);
+  vertical-align: text-bottom;
+  position: relative;
+  bottom: -2px;
+  cursor: pointer;
+}
+.JobsForm input[type=checkbox]:checked + label:before{
+  background:var(--main-color);
+}
+.JobsForm input[type=checkbox]:checked + label:after{
+  display: block;
+  content:"";
+  width: 0.875rem;
+  height: 0.75rem;
+  background-image: url(../../../../assets/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  cursor: pointer;
+}
+.JobsForm input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  font-weight: var(--bold);
+  width: 7.687rem;
+  height: 3rem;
+  padding-left: 0;
+  padding-right: 0;
+  transition: transform 0.4s ease;
+}
+.JobsForm input[type="submit"]:hover {
+  background-color: var(--main-color-hover);
+  cursor: pointer;
 }

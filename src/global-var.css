@@ -9,6 +9,7 @@
   --second-bg: #979797;
   --main-color-hover: #939BF4;
   --border-color: #E7E8E9;
+  --ckekbox-color: #E7E8E9;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -31,6 +32,7 @@ body.darked {
     --second-bg: #313743;
     --main-color-hover: #939BF4;
     --border-color: #E7E8E9;
+    --ckekbox-color: #313743;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
@@ -53,6 +55,7 @@ body.lighted {
   --second-bg: #979797;
   --main-color-hover: #939BF4;
   --border-color: #E7E8E9;
+  --ckekbox-color: #E7E8E9;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -76,6 +79,7 @@ body.lighted {
     --second-bg: #313743;
     --main-color-hover: #939BF4;
     --border-color: #E7E8E9;
+    --ckekbox-color: #313743;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
@@ -99,6 +103,7 @@ body.lighted {
     --second-color-hover: #C5C9F4;
     --second-bg: #979797;
     --main-color-hover: #939BF4;
+    --ckekbox-color: #E7E8E9;
   
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
