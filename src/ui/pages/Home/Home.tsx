@@ -1,18 +1,16 @@
 import React, { useContext } from 'react';
-// import { ContextCocktails } from '../../components/contexts/ContextCocktails';
-// import FormCocktail from '../../components/Molecules/FormCocktail';
-// import RecipeList from '../../components/Molecules/RecipeList';
+import JobList from '../../modules/jobs/components/JobList';
+ import { JobContext } from '../../modules/jobs/contexts/JobContext';
 import './Home.css';
 
 const Home: React.FC  = () => {
-  // const { recipes } = useContext(ContextCocktails);
+  const { jobs } = useContext(JobContext);
   return (
     <>
       <main>
         <div className="cw">
-          hola home
-          {/* <FormCocktail className="FormCocktail" />
-          {recipes.length > 0 && <RecipeList recipes={recipes} />} */}
+
+          {jobs.length > 0 && <JobList jobs={jobs} />}
         </div>
       </main>
     </>

@@ -45,31 +45,3 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 export default JobProvider;
 
 
-// export type Task =  { 
-//   text: string, 
-//   active: boolean, 
-//   completed: boolean, 
-//   checked: boolean, 
-//   id: number
-// } 
-
-// type TaskContextProps = {
-//   filter: string,
-//   tasks: Task[],
-//   getTasksFiltered: () => Task[],
-//   addTaskToList: (text: string) =>  void,
-//   changeStatusTask: (task: Task) =>  void,
-//   clearCompletedTasks: () => void,
-//   filterChange: (text: string) =>  void,
-//   deleteTask: (task: Task) =>  void,
-// }
-
-// type TasksProviderProps = {
-//   children: React.ReactNode;
-// }
-
-// export const TaskContext = createContext<TaskContextProps>(undefined!);
-
-// const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
-
-//   const [tasks, setTasks] = useState<Task[]>(getInitialState());
