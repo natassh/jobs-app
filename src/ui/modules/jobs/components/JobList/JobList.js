@@ -1,28 +1,28 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import RecipeBox from '../../Atoms/RecipeBox';
+import Job from '../Job';
 import './JobList.css';
 
 const JobList = ({ jobs }) => {
   console.log('listado: ,', jobs)
+  
   return (
-    <ul>
-      <li>1</li>
+    <ul className="JobList">
+      {jobs.map(job => {
+        return (
+          <Job
+            key={job.id}
+            id={job.id}
+            companyLogo={job.company_logo}
+            createdAlt={job.created_at}
+            url={job.url}
+            type={job.type}
+            title={job.title}
+            company={job.company}
+            companyLogo={job.company_logo}
+          />
+        );
+      })}
     </ul>
-    // <section className="RecipeList">
-    //   {recipes.map(recipe => {
-    //     return (
-    //       <Link to={`/recipe/${recipe.idDrink}`} key={recipe.idDrink}>
-    //         <RecipeBox
-    //           id={recipe.idDrink}
-    //           name={recipe.strDrink}
-    //           src={recipe.strDrinkThumb}
-    //           alt={recipe.strDrink}
-    //         />
-    //       </Link>
-    //     );
-    //   })}
-    // </section>
   );
 };
 

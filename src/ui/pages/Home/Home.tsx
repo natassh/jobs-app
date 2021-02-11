@@ -9,7 +9,6 @@ const Home: React.FC  = () => {
     <>
       <main>
         <div className="cw">
-
           {jobs.length > 0 && <JobList jobs={jobs} />}
         </div>
       </main>

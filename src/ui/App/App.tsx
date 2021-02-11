@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from '../pages/Home';
+import JobDetail from '../pages/JobDetail';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
@@ -16,6 +17,7 @@ const App = () => {
             <Header/>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/job/:id" component={JobDetail} />
             </Switch>
             <Footer />
           </Router>
