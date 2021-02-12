@@ -2,7 +2,7 @@ import React from 'react';
 import './Job.css';
 import { Link } from 'react-router-dom';
 
-function Job({ id, createdAlt, type, title, company, companyLogo, location }) {
+const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
   return (
     <li>
       {companyLogo && (
@@ -26,4 +26,14 @@ function Job({ id, createdAlt, type, title, company, companyLogo, location }) {
   );
 }
 export default Job;
+
+type JobProps = {
+  id: number,
+  createdAlt: any,
+  type: string,
+  title: string, 
+  company: string,
+  companyLogo: string,
+  location: string,
+}
 

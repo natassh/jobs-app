@@ -16,7 +16,7 @@ body {
 }
 .cw {
   width: 1110px;
-  padding: 0 1rem 0 1rem;
+  /* padding: 0 1rem 0 1rem; */
   margin: 0 auto;
 }
 /* RWD */
@@ -27,7 +27,12 @@ body {
 }
 @media screen and (max-width: 689px) {
   .cw {
-    width: 100%;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .cw {
+    width: 90%;
   }
 }
 

@@ -2,16 +2,18 @@ import React from 'react';
 import Job from '../Job';
 import './JobList.css';
 
-const JobList = ({ jobs }) => {
+const JobList: React.FC<JobListProps> = ({ jobs }) => {
   console.log('listado: ,', jobs)
-  const handleOnClick = (e) => {
+
+  // const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) :void => {
+  const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
     console.log("Load MOre")
   }
   return (
     <>
     <ul className="JobList">
-      {jobs.map(job => {
+      {jobs.map((job: any) => {
         return (
           <Job
             key={job.id}
@@ -34,4 +36,8 @@ const JobList = ({ jobs }) => {
 };
 
 export default JobList;
+
+type JobListProps = {
+  jobs: any,
+}
 
