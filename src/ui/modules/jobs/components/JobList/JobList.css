@@ -1,0 +1,30 @@
+.JobList {
+  margin:0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+.LoadMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  font-weight: var(--bold);
+  width: 8.8125rem;
+  height: 3rem;
+  padding-left: 0;
+  padding-right: 0;
+  transition: background-color 0.4s ease;
+  text-decoration: none;
+}
+.LoadMore:hover {
+  background-color: var(--main-color-hover);
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 .JobsForm {
-  background-color: var(--white-color);
+  background-color: var(--box-bg);
   display: grid;
   /* grid-template-columns:  2fr 1fr 1fr; */
   grid-template-columns:  463px 300px 345px;
@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   padding-left: 32px;
-  border-right: 1px solid #E7E8E9;
+  border-right: 1px solid var(--separated-color);
 }
 .JobsForm > div:last-child {
   border-right: none;
@@ -39,6 +39,7 @@
   font-size: var(--font-size);
   font-weight: var(--regular);
   color: var(--primary-color-text);
+  background-color: var(--box-bg);
 }
 .JobsForm input[type="text"]::placeholder {
   color: var(--second-color-text);
@@ -112,7 +113,7 @@
   height: 3rem;
   padding-left: 0;
   padding-right: 0;
-  transition: transform 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 .JobsForm input[type="submit"]:hover {
   background-color: var(--main-color-hover);

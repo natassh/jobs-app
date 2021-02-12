@@ -82,9 +82,9 @@ const JobsForm: React.FC = () => {
           Full Time Only
         </label>
         <input
-           type="submit" 
-           value="Search" 
-           className="JobsForm__submit" 
+          type="submit" 
+          value="Search" 
+          className="JobsForm__submit" 
         />
       </div>
      

@@ -10,6 +10,8 @@
   --main-color-hover: #939BF4;
   --border-color: #E7E8E9;
   --ckekbox-color: #E7E8E9;
+  --box-bg: #fff;
+  --separated-color: #E2E6EA;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -33,6 +35,8 @@ body.darked {
     --main-color-hover: #939BF4;
     --border-color: #E7E8E9;
     --ckekbox-color: #313743;
+    --box-bg: #19202D;
+    --separated-color: #2A3342;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
@@ -56,6 +60,8 @@ body.lighted {
   --main-color-hover: #939BF4;
   --border-color: #E7E8E9;
   --ckekbox-color: #E7E8E9;
+  --box-bg: #fff;
+  --separated-color: #E2E6EA;
 
   --twitter-color: #00ACEE;
   --linkedin-color: #0E76A8;
@@ -80,6 +86,8 @@ body.lighted {
     --main-color-hover: #939BF4;
     --border-color: #E7E8E9;
     --ckekbox-color: #313743;
+    --box-bg: #19202D;
+    --separated-color: #2A3342;
 
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
@@ -104,6 +112,8 @@ body.lighted {
     --second-bg: #979797;
     --main-color-hover: #939BF4;
     --ckekbox-color: #E7E8E9;
+    --box-bg: #fff;
+    --separated-color: #E2E6EA;
   
     --twitter-color: #00ACEE;
     --linkedin-color: #0E76A8;
