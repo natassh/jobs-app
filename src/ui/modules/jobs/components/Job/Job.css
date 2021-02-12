@@ -8,10 +8,11 @@
   padding: 42px 30px 27px 30px;
   position: relative;
   margin-right: 1.875rem;
+  margin-bottom: 3.5625rem;
   display:flex;
   flex-direction: column;
 }
-.JobList > li:nth-last-child(3n+3) {
+.JobList > li:nth-child(3n+3) {
   margin-right: 0;
 }
 .JobList > li:last-child {
@@ -21,7 +22,7 @@
   margin:0;
   padding:0;
   width: 50px;
-  /* height: 50px; */
+  height: 50px;
   position: absolute;
   top: -1rem;
   background-color: var(--white-color);
@@ -86,4 +87,25 @@
   font-weight: var(--bold);
   color: var(--main-color);
   margin-right: 0.1875rem;
+}
+@media screen and (max-width: 1200px) {
+  .JobList > li {
+    width: 49.1%;
+    margin-right: 0.6875rem;
+  }
+  .JobList > li:nth-child(3n+3) {
+    margin-right: 0.6875rem;
+  }
+  .JobList > li:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 689px) {
+  .JobList > li {
+    width: 100%;
+    margin-right: 0;
+  }
+  .JobList > li:nth-child(3n+3) {
+    margin-right: 0;
+  }
 }

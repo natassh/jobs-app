@@ -79,7 +79,7 @@ const JobsForm: React.FC = () => {
           htmlFor="fullTime"
           className = "fullTime"
         >
-          Full Time Only
+          Full Time <span>Only</span>
         </label>
         <input
           type="submit" 

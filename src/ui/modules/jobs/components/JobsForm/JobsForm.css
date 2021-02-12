@@ -119,3 +119,27 @@
   background-color: var(--main-color-hover);
   cursor: pointer;
 }
+@media screen and (max-width: 1200px) {
+  .JobsForm {
+    grid-template-columns: 222px 213px 255px;
+  }
+  .fullTime span {
+    display: none;
+  }
+  .JobsForm > div {
+    padding-left: 1.5rem;
+  }
+  .JobsForm input[type="submit"] {
+    width: 5rem;
+  }
+}
+@media screen and (max-width: 689px) {
+  .JobsForm {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+  }
+  .JobsForm > div {
+    border-right: none;
+  }
+}
