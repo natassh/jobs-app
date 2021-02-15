@@ -1,2 +1,3 @@
 import { getJobList } from './getJobList';
-export { getJobList };
+import { getJobDetail } from './getJobDetail';
+export { getJobList, getJobDetail };

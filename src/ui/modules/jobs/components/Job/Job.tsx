@@ -8,10 +8,10 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
   return (
     <li>
        <figure>
-      {companyLogo === null
-        ? <img src={defaultImage} alt="Imagen de un logo por defecto" />
-        : <img src={companyLogo} alt={company} />
-      }
+        {companyLogo === null
+          ? <img src={defaultImage} alt="Imagen de un logo por defecto" />
+          : <img src={companyLogo} alt={company} />
+        }
       </figure>
       <p className="JobData">
         {/* <em>{createdAlt}</em> */}

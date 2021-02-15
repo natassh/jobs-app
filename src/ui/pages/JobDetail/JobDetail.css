@@ -1,0 +1,35 @@
+.JobDetail {
+    margin-top: 14rem;
+}
+.JobDetail .cw {
+    width: 730px;
+    margin: 0 auto;
+    position: relative;
+}
+.infoJobDetail {
+    background-color: var(--box-bg);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: -16.5rem;
+}
+.article {
+    background-color: var(--box-bg);
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+.infoJobApply {
+    background: url(../../assets/images/bg-pattern-detail-footer.svg);
+    border-radius: 6px;
+    margin-bottom: 4.5rem;
+}
+.linkJobApply {
+    background-color: var(--box-bg);
+    margin-bottom: 2rem;
+}
+.linkJobApply .cw {
+    width: 730px;
+    margin: 0 auto;
+}

@@ -18,7 +18,6 @@ export const JobContext = createContext<JobContextProps>(undefined!);
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [jobs, setJobs] = useState<JobType[]>([]);
-  console.log('jobs: ', jobs)
   
   useEffect(() => {
     initJobList();
