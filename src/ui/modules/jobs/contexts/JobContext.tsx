@@ -1,10 +1,10 @@
 import React, { createContext, useState, useEffect} from 'react';
 import {getJobList} from "../../../../core/services/jobs/getJobList"
 
-type Job =  {} 
+export type JobType =  {} 
 
 type JobContextProps = {
-  jobs: Job[],
+  jobs: JobType[],
   // initJobList: Promise<boolean>,
   // initJobList: () =>  void,
 }
@@ -17,7 +17,7 @@ export const JobContext = createContext<JobContextProps>(undefined!);
 
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [jobs, setJobs] = useState<JobType[]>([]);
   console.log('jobs: ', jobs)
   
   useEffect(() => {

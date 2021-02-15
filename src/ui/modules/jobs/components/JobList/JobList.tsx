@@ -1,5 +1,6 @@
 import React from 'react';
 import Job from '../Job';
+ import {JobType} from '../../contexts/JobContext'
 import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {
@@ -38,6 +39,8 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
 export default JobList;
 
 type JobListProps = {
-  jobs: any,
+  jobs: JobType[],
 }
+
+
 

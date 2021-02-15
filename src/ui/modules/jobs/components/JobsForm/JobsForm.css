@@ -5,8 +5,8 @@
   grid-template-columns:  463px 300px 345px;
   grid-template-rows: 1fr;
   border-radius: 6px;
-  position: absolute;
-  bottom: -2.375rem;
+  position: relative;
+  bottom: 2.375rem;
 }
 .JobsForm > div {
   position: relative;

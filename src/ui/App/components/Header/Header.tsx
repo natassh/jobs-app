@@ -1,6 +1,5 @@
 import React from 'react';
 import ToogleColorTheme from '../../../modules/color-theme-scheme/components/ToogleColorTheme';
-import JobsForm from '../../../modules/jobs/components/JobsForm';
 import './Header.css';
 import logo from '../../../assets/images/logo.svg';
 
@@ -14,7 +13,6 @@ const Header: React.FC = () => {
           </h1>
           <ToogleColorTheme/>
         </div>
-        <JobsForm />
       </div>
     </header>
   );

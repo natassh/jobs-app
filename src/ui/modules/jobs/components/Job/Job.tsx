@@ -4,7 +4,6 @@ import './Job.css';
 import { Link } from 'react-router-dom';
 
 const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
-
   
   return (
     <li>
@@ -14,8 +13,9 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
         : <img src={companyLogo} alt={company} />
       }
       </figure>
-      <p className="JobList__data">
-        <em>{createdAlt}</em>
+      <p className="JobData">
+        {/* <em>{createdAlt}</em> */}
+        <em>1mo ago</em>
         <em>{type}</em>
       </p>
       <Link to={`/job/${id}`} key={id}>

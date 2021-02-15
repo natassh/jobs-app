@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import JobList from '../../modules/jobs/components/JobList';
  import { JobContext } from '../../modules/jobs/contexts/JobContext';
+ import JobsForm from '../../modules/jobs/components/JobsForm';
 import './Home.css';
 
 const Home: React.FC  = () => {
@@ -9,6 +10,7 @@ const Home: React.FC  = () => {
     <>
       <main>
         <div className="cw">
+          <JobsForm />
           {jobs.length > 0 && <JobList jobs={jobs} />}
         </div>
       </main>
