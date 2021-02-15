@@ -1,25 +1,19 @@
 import React from 'react';
+import defaultImage from '../../../../assets/images/defaultImage.svg';
 import './Job.css';
 import { Link } from 'react-router-dom';
 
 const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
-  const dateToday: any = new Date(); // Fri Feb 12 2021 13:00:42 GMT+0100 (hora estándar de Europa central)
-  const stringDateToday = dateToday.toString()
-  const today = Date.parse(stringDateToday) 
 
-  const dateCreateOffer = createdAlt; // Fri Feb 12 11:00:23 UTC 2021
-  const dateOffer =Date.parse(dateCreateOffer) 
-
-  const b = today - dateOffer
-  console.log(b) 
-
+  
   return (
     <li>
-      {companyLogo && (
-        <figure>
-          <img src={companyLogo} alt={company} />
-        </figure>
-      )}
+       <figure>
+      {companyLogo === null
+        ? <img src={defaultImage} alt="Imagen de un logo por defecto" />
+        : <img src={companyLogo} alt={company} />
+      }
+      </figure>
       <p className="JobList__data">
         <em>{createdAlt}</em>
         <em>{type}</em>
@@ -46,5 +40,3 @@ type JobProps = {
   companyLogo: string,
   location: string,
 }
-
-// "Fri Oct 09 19:42:30 UTC 2020"
