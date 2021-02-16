@@ -18,6 +18,7 @@
   margin-bottom: 2rem;
   position: absolute;
   top: -10.5rem;
+  border-radius: 6px;
 }
 .infoJobDetail div:first-child {
   margin-right:2.5rem ;
@@ -37,6 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--second-color);
+  border-radius: 6px;
 }
 .infoJobDetail figure img {
   display: block;
