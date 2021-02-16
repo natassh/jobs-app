@@ -112,6 +112,7 @@
   color: var(--main-color);
   margin-right: 0.1875rem;
 }
+
 @media screen and (max-width: 1200px) {
   .JobList > li {
     width: 49.1%;

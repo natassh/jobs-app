@@ -264,3 +264,31 @@ body.darked .article .content p {
   font-size: var(--font-size);
   font-weight: var(--bold);
 }
+.linkJobApply {
+  padding: 1.4375rem 0 1.375rem 0;
+}
+.linkJobApply .cw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.linkJobApply .cw div{
+  
+}
+.linkJobApply h2 {
+  margin:0;
+  padding:0;
+  font-family: var(--main-font);
+  font-size: 1.25rem;
+  font-weight: var(--bold);
+  color: var(--primary-color-text);
+  margin-bottom: 0.75rem;
+}
+.linkJobApply p {
+  margin:0;
+  padding:0;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  font-weight: var(--regular);
+  color: var(--second-color-text);
+}

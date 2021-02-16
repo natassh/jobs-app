@@ -16,7 +16,7 @@
   margin-right: 0;
 }
 .Footer li a {
-  color: var(--text);
+  color: var(--main-color);
   font-size: 0.875rem;
   text-decoration: none;
 }
