@@ -1,38 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './JobDetail.css';
-import { useParams } from 'react-router-dom';
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
-import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
-import parse from 'html-react-parser';
+
 
 
 const JobDetail: React.FC  = () => {
-
-  const { id }:any = useParams();
-  const [job, setJob] = useState({
-    company: "",
-    company_logo: "",
-    company_url: "",
-    created_at: "",
-    description: "",
-    how_to_apply: "",
-    id: "",
-    location: "",
-    title: "",
-    type: "",
-    url: "",
-  });
-  console.log('job ', job)
-
-  useEffect(() => {
-    onLoadJobDetail(id);
-  }, [id]);
-
-  const onLoadJobDetail = async (id:number) => {
-    const detailJob = await getJobDetail(id);
-    const job = detailJob;
-    setJob(job);
-  };
   
   return (
     <>
@@ -40,19 +12,13 @@ const JobDetail: React.FC  = () => {
       <div className="cw">
         <aside className="infoJobDetail">
           <div>
-          <figure>
-            {job.company_logo === null
-              ? <img src={defaultImageCompanyDetail} alt="Imagen de un logo por defecto" />
-              : <img src={job.company_logo} alt={job.company} />
-            }
-          </figure>
+            <figure>
+              <img src={defaultImageCompanyDetail} />
+            </figure>
           </div>
           <div>
-            <h1>{job.company}.
-              <strong>{job.company_url}</strong>
-            </h1>
-            
-            <a href={job.company_url} className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer">
+            <h1>So Digital Inc. <strong>sodigital.co</strong></h1>
+            <a href="#" className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer" /*onClick={handleOnClick}*/>
               Company Site
             </a>
           </div>
@@ -60,36 +26,94 @@ const JobDetail: React.FC  = () => {
         <article className="article">
           <header>
             <div>
-              <p className="JobData">
-                <em>{job.created_at}</em>
-                <em>{job.type}</em>
+              <p className="jobData">
+                <em>1w ago</em>
+                <em>Part Time</em>
               </p>
-              <h2>{job.title}</h2>
+              <h2>Senior Software Engineer</h2>
               <ul className="categorieList">
-                <li>{job.type},</li>
-                <li>{job.location} </li>
+                <li>Remote,</li>
+                <li> Seoul,</li>
+                <li> Tokyo,</li>
+                <li> Mountain View,</li>
+                <li> San Fransisco </li>
               </ul>
             </div>
-            <a href={job.url} className="JobDetail__linkApply" target="_blank" rel="noopener noreferrer">
+            <a href="#" className="JobDetail__linkApply" target="_blank" rel="noopener noreferrer" /*onClick={handleOnClick}*/>
               Apply Now
             </a>
           </header>
           <div className="content">
-            {parse(job.description)}
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. 
+              Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, 
+              nisi. Sed pretium, ligula sollicitudin <strong>laoreet viverra</strong>, tortor libero sodales leo, 
+              eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. 
+            </p>
+            <p>
+              Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. 
+              Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. 
+              Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, 
+              lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. 
+              Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+            </p>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              See more about our teams here
+            </a>
+            <strong>Requirements</strong>
+            <p>
+              Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, 
+              lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, 
+              adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. 
+              Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+            </p>
+            <ul className="list">
+              <li>Morbi interdum mollis sapien. Sed</li>
+              <li>Phasellus lacinia magna a ullamcorper laoreet, lectus arcu pulvinar risus</li>
+              <li>Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus.</li>
+              <li>Morbi interdum mollis sapien. Sed</li>
+            </ul>
+            <strong>What You Will Do</strong>
+            <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. 
+            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. 
+            Sed pretium, <a href="#">ligula sollicitudin</a> laoreet viverra, tortor libero sodales leo, eget blandit nunc 
+            tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+            </p>
+            <p>
+            Sed egestas, ante et vulputate volutpat, 
+            eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, 
+            commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. 
+            Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. 
+            Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+            </p>
+            <ul className="numericalList">
+              <li> <span>1</span> Morbi interdum mollis sapien. Sed</li>
+              <li> <span>2</span> Phasellus lacinia magna a ullamcorper laoreet, lectus arcu pulvinar risus</li>
+              <li> <span>3</span> Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel.</li>
+              <li> <span>4</span> Morbi interdum mollis sapien. Sed</li>
+            </ul>
           </div>
         </article>
         <aside className="infoJobApply">
           <strong>How to Apply</strong>
-          {parse(job.how_to_apply)}
+          <p>
+            Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, 
+            lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, 
+            adipiscing varius, adipiscing in, lacinia vel, tellus.
+          </p>
+          <a href="https://examplelink.com/how-to-apply" target="_blank" rel="noopener noreferrer">
+            https://examplelink.com/how-to-apply
+          </a>
         </aside>
       </div>
       <aside className="linkJobApply">
         <div className="cw">
           <div>
-            <h2>{job.title}</h2>
-            <p>{job.company_url}</p>
+            <h2>Senior Software Engineer</h2>
+            <p>So Digital Inc.</p>
           </div>
-          <a href={job.url} className="JobDetail__linkApply" target="_blank" rel="noopener noreferrer">
+          <a href="#" className="JobDetail__linkApply" target="_blank" rel="noopener noreferrer">
             Apply Now
           </a>
         </div>

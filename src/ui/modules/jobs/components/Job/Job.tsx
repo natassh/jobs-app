@@ -13,7 +13,7 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
           : <img src={companyLogo} alt={company} />
         }
       </figure>
-      <p className="JobData">
+      <p className="jobData">
         {/* <em>{createdAlt}</em> */}
         <em>1mo ago</em>
         <em>{type}</em>
