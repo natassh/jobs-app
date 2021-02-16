@@ -67,6 +67,8 @@
 }
 .infoJobApply {
   background: url(../../assets/images/bg-pattern-detail-footer.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 6px;
   margin-bottom: 4.5rem;
 }
@@ -216,6 +218,7 @@ body.darked .article .content p {
   margin-bottom: 0.5rem;
   list-style: none;
   position: relative;
+  display: flex;
 }
 .list li {
   padding-left: 37px;
@@ -272,9 +275,6 @@ body.darked .article .content p {
   justify-content: space-between;
   align-items: center;
 }
-.linkJobApply .cw div{
-  
-}
 .linkJobApply h2 {
   margin:0;
   padding:0;
@@ -291,4 +291,83 @@ body.darked .article .content p {
   font-size: var(--font-size);
   font-weight: var(--regular);
   color: var(--second-color-text);
+}
+@media screen and (max-width: 768px) {
+  .JobDetail .cw {
+    width: 550px;
+  }
+  .categorieList {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 550px) {
+  .article {
+    padding: 40px 25px 32px 24px;
+  }
+  .JobDetail {
+    margin-top: 13rem;
+  }
+  .JobDetail .cw {
+    width: 90%;
+  }
+  .infoJobDetail {
+    flex-direction: column;
+    border-radius: 6px;
+    height: 205px;
+    top: -14.5rem;
+  }
+  .infoJobDetail div:first-child {
+    margin-right: 0;
+    position: relative;
+    top: -1.5625rem;
+  }
+  .infoJobDetail figure {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+  .infoJobDetail figure img {
+    border-radius: 6px;
+  }
+  .infoJobDetail div:last-child {
+    flex-direction: column;
+    padding-right: 0;
+  }
+  .infoJobDetail h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .article > header {
+    flex-direction: column;
+  }
+  .JobDetail__linkApply {
+    width: 100%;
+  }
+  .categorieList {
+    margin-bottom: 1.875rem;
+  }
+  .article h2 {
+    font-size: 1.25rem;
+  }
+  .numericalList li span {
+    margin-right: 1.875rem;
+  }
+  .list li {
+    padding-left: 1.875rem;
+  }
+  .infoJobApply {
+    background: url(../../assets/images/bg-pattern-detail-footer-mvl.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2.5rem;
+    padding: 40px 25px 32px 24px;
+  }
+  .linkJobApply {
+    margin-bottom:0;
+  }
+  .linkJobApply .cw > div {
+    display: none;
+  }
+  body.darked .JobDetail__linkCompany {
+    color: var(--main-color);
+  }
 }

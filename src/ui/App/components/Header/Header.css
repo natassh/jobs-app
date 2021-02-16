@@ -14,10 +14,11 @@
   margin:0;
   padding:0;
 }
-@media screen and (max-width: 689px) {
+@media screen and (max-width: 550px) {
   .Header {
     background: url(../../../assets/images/bg-pattern-header-mobile.svg);
-    min-height: 136px;
-    padding-top: 2rem;
+    background-repeat: no-repeat;
+    padding-top: 3rem;
+    background-size: cover;
   }
 }
