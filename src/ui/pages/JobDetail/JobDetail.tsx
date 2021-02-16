@@ -48,9 +48,11 @@ const JobDetail: React.FC  = () => {
           </figure>
           </div>
           <div>
-            <h1>{job.company}.</h1>
-            <strong>{job.company_url}</strong>
-            <a href="{job.company_url}" className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer">
+            <h1>{job.company}.
+              <strong>{job.company_url}</strong>
+            </h1>
+            
+            <a href={job.company_url} className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer">
               Company Site
             </a>
           </div>

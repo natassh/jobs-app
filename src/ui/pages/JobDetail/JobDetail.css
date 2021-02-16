@@ -1,5 +1,5 @@
 .JobDetail {
-    margin-top: 14rem;
+    margin-top: 8rem;
 }
 .JobDetail .cw {
     width: 730px;
@@ -7,13 +7,58 @@
     position: relative;
 }
 .infoJobDetail {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background-color: var(--box-bg);
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
     margin-bottom: 2rem;
     position: absolute;
-    top: -16.5rem;
+    top: -10.5rem;
+}
+.infoJobDetail div:first-child {
+    margin-right:2.5rem ;
+}
+.infoJobDetail div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 2.6875rem;
+}
+.infoJobDetail figure {
+    margin: 0;
+    padding: 0;
+    width: 8.75rem;
+    height: 8.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoJobDetail figure img {
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: 6px;
+}
+.infoJobDetail h1 {
+    margin:0;
+    padding:0;
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+    font-weight: var(--bold);
+    color: var(--primary-color-text);
+    text-transform: capitalize;
+}
+.infoJobDetail h1 strong {
+    display: block;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    font-weight: var(--regular);
+    color: var(--second-color-text);
+    margin-top:1rem;
 }
 .article {
     background-color: var(--box-bg);
@@ -32,4 +77,28 @@
 .linkJobApply .cw {
     width: 730px;
     margin: 0 auto;
+}
+.JobDetail__linkCompany {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    font-weight: var(--bold);
+    width: 9.1875rem;
+    height: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+    transition: background-color 0.4s ease;
+    text-decoration: none;
+}
+.JobDetail__linkCompany:hover {
+    background-color: var(--second-color-hover);
+    cursor: pointer;
+}
+body.darked .JobDetail__linkCompany {
+    color: var(--white-color);
 }
