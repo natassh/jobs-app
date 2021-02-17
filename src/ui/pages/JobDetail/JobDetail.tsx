@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './JobDetail.css';
 import { useParams } from 'react-router-dom';
-import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
-import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import parse from 'html-react-parser';
+import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import {getTimeDifference} from "../../../core/services/utils"
-
+import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
+import './JobDetail.css';
 
 const JobDetail: React.FC  = () => {
 
@@ -37,7 +36,7 @@ const JobDetail: React.FC  = () => {
   // Get Time difference
   const current:any = Date();
   const timeDifference = getTimeDifference(current, job.created_at);
-  console.log('timeDifference: ', timeDifference);
+  // console.log('timeDifference: ', timeDifference);
   
   return (
     <>

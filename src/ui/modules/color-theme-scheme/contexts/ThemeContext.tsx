@@ -24,7 +24,7 @@ const getInitialState = (): string => {
 };
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [colorSchema, setColorSchema] = useState<string>("getInitialState()")
+  const [colorSchema, setColorSchema] = useState<string>(getInitialState())
 
   const defaultTheme = 'dark';
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import ToogleColorTheme from '../../../modules/color-theme-scheme/components/ToogleColorTheme';
-import './Header.css';
-import logo from '../../../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
+import ToogleColorTheme from '../../../modules/color-theme-scheme/components/ToogleColorTheme';
+import logo from '../../../assets/images/logo.svg';
+import './Header.css';
 
 const Header: React.FC = () => {
   return (

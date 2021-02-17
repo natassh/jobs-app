@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { JobContext } from '../../contexts/JobContext';
-import {FilterType} from '../../contexts/JobContext'
+import { JobContext, FilterType } from '../../contexts/JobContext';
 
 import './JobsForm.css';
 
@@ -94,8 +93,6 @@ const JobsForm: React.FC = () => {
           className="JobsForm__submit" 
         />
       </div>
-     
-      
     </form>
   );
 };
