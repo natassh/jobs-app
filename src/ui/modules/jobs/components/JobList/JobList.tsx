@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Job from '../Job';
-import {JobType} from '../../contexts/JobContext'
+import {JobType, JobContext} from '../../contexts/JobContext'
 import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {
 
+  const { pageNumber, setPageNumber } = useContext(JobContext);
+  
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
+    setPageNumber(pageNumber + 1);
   }
-
+  
   return (
     <>
       <ul className="JobList">
@@ -27,9 +30,12 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
           );
         })}
       </ul>
-      <a href="#" className="LoadMore" onClick={handleOnClick}>
-        Load More
-      </a>
+      {jobs !== [] && jobs.length > 48 && (
+        <a href="#" className="LoadMore" onClick={handleOnClick}>
+          Load More
+        </a>
+      )}
+      
     </>
   );
 };

@@ -10,7 +10,9 @@ export type FilterType =  {
 
 type JobContextProps = {
   jobs: JobType[],
-  setFilters: any
+  setFilters: any, 
+  pageNumber: number,
+  setPageNumber: any
   // initJobList: Promise<boolean>,
   // initJobList: () =>  void,
 }
@@ -33,21 +35,28 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
   })
   // console.log('filters:', filters);
 
-  useEffect(() => {
-    initJobList(filters);
-  }, [filters]);
+  const [pageNumber, setPageNumber] = useState(1);
 
-  const initJobList = async (filters:FilterType) => {
+  useEffect(() => {
+    initJobList(filters, pageNumber);
+  }, [filters, pageNumber]);
+
+  const initJobList = async (filters:FilterType, pageNumber: number) => {
     const { description, location, fullTime } = filters;
-    const jobList = await getJobList(description, location, fullTime);
-    setJobs(jobList);
+    const jobList = await getJobList(description, location, fullTime, pageNumber);
+    //console.log('jobList: ', jobList) // Array de objetos
+    //setJobs(jobList);
+     const newJobList = jobs.concat(jobList)
+     setJobs(newJobList);
   };
 
   return (
     <JobContext.Provider
       value={{
         jobs,
+        pageNumber,
         setFilters,
+        setPageNumber,
       }}
     >
       {children}
