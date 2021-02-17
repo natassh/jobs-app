@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
 import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import parse from 'html-react-parser';
+import {getTimeDifference} from "../../../core/services/utils"
 
 
 const JobDetail: React.FC  = () => {
@@ -22,7 +23,6 @@ const JobDetail: React.FC  = () => {
     type: "",
     url: "",
   });
-  console.log('job ', job)
 
   useEffect(() => {
     onLoadJobDetail(id);
@@ -33,6 +33,11 @@ const JobDetail: React.FC  = () => {
     const job = detailJob;
     setJob(job);
   };
+
+  // Get Time difference
+  const current:any = Date();
+  const timeDifference = getTimeDifference(current, job.created_at);
+  console.log('timeDifference: ', timeDifference);
   
   return (
     <>
@@ -61,7 +66,8 @@ const JobDetail: React.FC  = () => {
           <header>
             <div>
               <p className="jobData">
-                <em>{job.created_at}</em>
+                {/* <em>{job.created_at}</em> */}
+                <em>1mo ago</em>
                 <em>{job.type}</em>
               </p>
               <h2>{job.title}</h2>
