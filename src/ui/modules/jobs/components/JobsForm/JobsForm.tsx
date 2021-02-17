@@ -1,39 +1,47 @@
 import React, { useState, useContext } from 'react';
-// import Input from '../../../../components/Input';
-// import { TaskContext } from '../../contexts/TaskContext';
+import { JobContext } from '../../contexts/JobContext';
+import {FilterType} from '../../contexts/JobContext'
 
 import './JobsForm.css';
 
 const JobsForm: React.FC = () => {
-  const [descriptionValue, setDescriptionValue] = useState<string>("")
-  const [locationValue, setLocationValue] = useState<string>("")
-  const [fullTimeValue, setFullTimeValue] = useState<boolean>(false)
-  console.log('descriptionValue: ', descriptionValue)
-  console.log('locationValue: ', locationValue)
-  console.log('fullTimeValue: ', fullTimeValue)
 
+  const { setFilters } = useContext(JobContext);
+  const [filtersForm, setFiltersForm] = useState<FilterType>({
+    description: "",
+    location: "",
+    fullTime: false
+  })
 
   const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement> ) => {
-    const inputNewValue = e.target.value;
-    setDescriptionValue(inputNewValue)
+    const descriptionValue = e.target.value;
+    setFiltersForm({
+      ...filtersForm,
+      description: descriptionValue
+    })
   };
   const handleChangeLocation = (e: React.ChangeEvent<HTMLInputElement> ) => {
-    const inputNewValue = e.target.value;
-    setLocationValue(inputNewValue);
+    const locationValue = e.target.value;
+    setFiltersForm({
+      ...filtersForm,
+      location: locationValue
+    })
   };
   const handleChangeFullTime = (e: React.ChangeEvent<HTMLInputElement> ) => {
-    setFullTimeValue(!fullTimeValue)
+    setFiltersForm({
+      ...filtersForm,
+      fullTime: !filtersForm.fullTime
+    })
+
   };
 
-
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-  //   e.preventDefault();
-  //   addTaskToList(valueInput);
-  //   setValueInput('');
-  // };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    setFilters(filtersForm);
+  };
 
   return (
-    <form className="JobsForm" /*onSubmit={handleSubmit}*/>
+    <form className="JobsForm" onSubmit={handleSubmit}>
       <div>
         <label 
           htmlFor="description"
@@ -46,7 +54,7 @@ const JobsForm: React.FC = () => {
           title="description"
           className="JobsForm__description"
           placeholder="Filter by title, companies, expertise…"
-          value={descriptionValue}
+          value={filtersForm.description}
           onChange={handleChangeDescription}
         />
       </div>
@@ -63,7 +71,7 @@ const JobsForm: React.FC = () => {
           title="location"
           className="JobsForm__location"
           placeholder="Filter by location…"
-          value={locationValue}
+          value={filtersForm.location}
           onChange={handleChangeLocation}
         />
       </div>
@@ -72,7 +80,6 @@ const JobsForm: React.FC = () => {
         <input 
           type="checkbox" 
           id="fullTime"
-          // checked={task.checked}
           onChange={handleChangeFullTime}
         />
         <label 
@@ -95,55 +102,5 @@ const JobsForm: React.FC = () => {
 
 export default JobsForm;
 
-// const [valueInput, setValueInput] = useState<string>('');
-// const { addTaskToList } = useContext(TaskContext);
-
-// const handleWhenValueInputChange = (inputNewValue:string) => {
-//   setValueInput(inputNewValue);
-// };
-
-// <Input
-// title="Create a new todo"
-// onChange={handleWhenValueInputChange} 
-// className="AddTaskForm__Input"
-// type="text"
-// value={valueInput}
-// placeholder = "Create a new todo..."
-// />
-
-
-// import React from 'react';
-// import './Input.css';
-
-// const Input: React.FC<InputProps> = ({ onChange, title, className, type, value, placeholder }) => {
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement> ) => {
-//     const inputNewValue = e.target.value;
-//     onChange(inputNewValue);
-//   };
-
-//   return (
-//     <input
-//       title={title} 
-//       className={className} 
-//       type={type}
-//       placeholder={placeholder}
-//       value={value}
-//       onChange={handleChange}
-//     />
-//   );
-// };
-
-// export default Input;
-
-
-// type InputProps = {
-//   title: string,
-//   className: string,
-//   type: string,
-//   value?: string,
-//   placeholder?: string,
-//   onChange: (value: string) => void
-// }
 
 

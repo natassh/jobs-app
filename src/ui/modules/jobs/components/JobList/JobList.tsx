@@ -1,16 +1,16 @@
 import React from 'react';
 import Job from '../Job';
- import {JobType} from '../../contexts/JobContext'
+import {JobType} from '../../contexts/JobContext'
 import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {
   console.log('listado: ,', jobs)
 
-  // const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) :void => {
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
     console.log("Load MOre")
   }
+
   return (
     <>
     <ul className="JobList">
@@ -41,6 +41,8 @@ export default JobList;
 type JobListProps = {
   jobs: JobType[],
 }
+
+
 
 
 
