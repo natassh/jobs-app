@@ -34,9 +34,9 @@ const JobDetail: React.FC  = () => {
   };
 
   // Get Time difference
-  const current:any = Date();
-  const timeDifference = getTimeDifference(current, job.created_at);
-  // console.log('timeDifference: ', timeDifference);
+  const currentDate:number = new Date().getTime();
+  const creationDate:number = new Date(job.created_at).getTime();
+  const timeDifference = getTimeDifference(currentDate, creationDate);
   
   return (
     <>
@@ -65,8 +65,8 @@ const JobDetail: React.FC  = () => {
           <header>
             <div>
               <p className="jobData">
-                {/* <em>{job.created_at}</em> */}
-                <em>1mo ago</em>
+                <em>{timeDifference}</em>
+                {/* <em>1mo ago</em> */}
                 <em>{job.type}</em>
               </p>
               <h2>{job.title}</h2>

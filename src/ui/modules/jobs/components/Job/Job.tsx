@@ -5,11 +5,10 @@ import defaultImage from '../../../../assets/images/defaultImage.svg';
 import './Job.css';
 
 const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
-  
   // Get Time difference
-  const current:any = Date();
-  const timeDifference = getTimeDifference(current, createdAlt);
-  // console.log('timeDifference: ', timeDifference);
+  const currentDate:number = new Date().getTime();
+  const creationDate:number = new Date(createdAlt).getTime();
+  const timeDifference = getTimeDifference(currentDate, creationDate);
   
   return (
     <li>
@@ -20,8 +19,7 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
         }
       </figure>
       <p className="jobData">
-        {/* <em>{createdAlt}</em> */}
-        <em>1mo ago</em>
+        <em>{timeDifference}</em>
         <em>{type}</em>
       </p>
       <Link to={`/job/${id}`} key={id}>
