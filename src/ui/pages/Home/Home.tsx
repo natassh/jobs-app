@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import JobsForm from '../../modules/jobs/components/JobsForm';
 import JobList from '../../modules/jobs/components/JobList';
+import Loading from "../../components/Loading"
  import { JobContext } from '../../modules/jobs/contexts/JobContext';
 import './Home.css';
 
@@ -11,6 +12,9 @@ const Home: React.FC  = () => {
       <main>
         <div className="cw">
           <JobsForm />
+          {jobs.length === 0 && (
+              <Loading/>
+          ) }
           {jobs.length > 0 && <JobList jobs={jobs} />}
         </div>
       </main>

@@ -5,7 +5,7 @@ import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {
 
-  const { pageNumber, setPageNumber } = useContext(JobContext);
+  const { pageNumber, setPageNumber, showButtonLoadMore } = useContext(JobContext);
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
         {jobs.map((job: any) => {
           return (
             <Job
-              key={job.id}
+              // key={job.id}
               id={job.id}
               companyLogo={job.company_logo}
               createdAlt={job.created_at}
@@ -30,7 +30,7 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
           );
         })}
       </ul>
-      {jobs !== [] && jobs.length > 48 && (
+      {showButtonLoadMore && (
         <a href="#" className="LoadMore" onClick={handleOnClick}>
           Load More
         </a>

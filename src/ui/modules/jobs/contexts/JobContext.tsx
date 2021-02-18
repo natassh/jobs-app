@@ -12,6 +12,7 @@ type JobContextProps = {
   jobs: JobType[],
   setFilters: any, 
   pageNumber: number,
+  showButtonLoadMore:boolean,
   setPageNumber: any
   // initJobList: Promise<boolean>,
   // initJobList: () =>  void,
@@ -26,7 +27,6 @@ export const JobContext = createContext<JobContextProps>(undefined!);
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [jobs, setJobs] = useState<JobType[]>([]);
-  // console.log('jobs:', jobs);
 
   const [filters, setFilters] = useState<FilterType>({
     description: "",
@@ -37,6 +37,8 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [pageNumber, setPageNumber] = useState(1);
 
+  const [showButtonLoadMore, setShowButtonLoadMore] = useState(true);
+
   useEffect(() => {
     initJobList(filters, pageNumber);
   }, [filters, pageNumber]);
@@ -44,8 +46,9 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
   const initJobList = async (filters:FilterType, pageNumber: number) => {
     const { description, location, fullTime } = filters;
     const jobList = await getJobList(description, location, fullTime, pageNumber);
-    //console.log('jobList: ', jobList) // Array de objetos
-    //setJobs(jobList);
+    if(jobList.length < 50) {
+      setShowButtonLoadMore(false)
+    }
      const newJobList = jobs.concat(jobList)
      setJobs(newJobList);
   };
@@ -55,6 +58,7 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
       value={{
         jobs,
         pageNumber,
+        showButtonLoadMore,
         setFilters,
         setPageNumber,
       }}
