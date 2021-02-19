@@ -33,7 +33,6 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
     location: "",
     fullTime: false
   })
-  // console.log('filters:', filters);
 
   const [pageNumber, setPageNumber] = useState(1);
 
