@@ -31,7 +31,7 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
         })}
       </ul>
       {showButtonLoadMore && (
-        <a href="#" className="LoadMore" onClick={handleOnClick}>
+        <a href="#" className="LoadMore"  onClick={handleOnClick}>
           Load More
         </a>
       )}

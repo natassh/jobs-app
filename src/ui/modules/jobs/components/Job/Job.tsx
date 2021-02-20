@@ -6,9 +6,7 @@ import './Job.css';
 
 const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
   // Get Time difference
-  const currentDate:number = new Date().getTime();
-  const creationDate:number = new Date(createdAlt).getTime();
-  const timeDifference = getTimeDifference(currentDate, creationDate);
+  const timeDifference = getTimeDifference(createdAlt);
   
   return (
     <li>
@@ -36,11 +34,11 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
 export default Job;
 
 type JobProps = {
-  id: number,
-  createdAlt: any,
+  id: string,
+  createdAlt: string ,
   type: string,
   title: string, 
-  company: string,
+  company: string ,
   companyLogo: string,
   location: string,
 }

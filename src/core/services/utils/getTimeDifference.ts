@@ -1,4 +1,10 @@
-const getTimeDifference = (current:any, previous: any) => {
+
+
+const getTimeDifference = (date :any, ) => {
+
+
+  const currentDate:number =  new Date().getTime();
+  const dateTimestamp:number = new Date(date).getTime();;
   
   const msPerMinute = 60 * 1000;
   const msPerHour = msPerMinute * 60;
@@ -6,7 +12,7 @@ const getTimeDifference = (current:any, previous: any) => {
   const msPerMonth = msPerDay * 30;
   const msPerYear = msPerDay * 365;
 
-  const elapsed = current - previous;
+  const elapsed = currentDate - dateTimestamp;
 
   if (elapsed < msPerMinute) {
     return Math.round(elapsed/1000) + ' s ago';   
