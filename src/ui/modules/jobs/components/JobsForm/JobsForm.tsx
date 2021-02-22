@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { JobContext, FilterType } from '../../contexts/JobContext';
-
 import './JobsForm.css';
 
 const JobsForm: React.FC = () => {

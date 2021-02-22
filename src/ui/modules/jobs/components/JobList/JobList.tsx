@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import Job from '../Job';
 import {JobType, JobContext} from '../../contexts/JobContext'
+import Job from '../Job';
 import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {

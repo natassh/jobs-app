@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
+import { JobContext } from '../../modules/jobs/contexts/JobContext';
 import JobsForm from '../../modules/jobs/components/JobsForm';
 import JobList from '../../modules/jobs/components/JobList';
 import Loading from "../../components/Loading"
- import { JobContext } from '../../modules/jobs/contexts/JobContext';
 import './Home.css';
 
 const Home: React.FC  = () => {
