@@ -1,5 +1,4 @@
 import React from 'react';
-import './ExternalLink.css';
 
 const ExternalLink: React.FC<ExternalLinkProps> = ({ className = '', href, text }) => {
   const classes = `${className} link`;

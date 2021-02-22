@@ -6,22 +6,21 @@ import Home from '../pages/Home';
 import JobDetail from '../pages/JobDetail';
 import ThemeProvider from '../modules/color-theme-scheme/contexts/ThemeContext';
 import JobProvider from '../modules/jobs/contexts/JobContext';
-import './App.css';
 
 const App = () => {
   return (
     <div className="App">
       <ThemeProvider>
-        <JobProvider>
           <Router>
             <Header/>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/job/:id" component={JobDetail} />
-            </Switch>
+            <JobProvider>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/job/:id" component={JobDetail} />
+              </Switch>
+            </JobProvider>
             <Footer />
           </Router>
-        </JobProvider>
       </ThemeProvider>
     </div>
   );
