@@ -22,11 +22,11 @@ export type FiltersType =  {
 
 type JobContextProps = {
   jobs: JobType[],
-  pageNumber: number,
-  showButtonLoadMore:boolean,
+  currentPage: number,
+  hasMorejobs:boolean,
   filters: FiltersType
   setFilters: (filters: FiltersType) => void, 
-  setPageNumber: (page: number) => void
+  setPage: (page: number) => void
 }
 
 type JobProviderProps = {
@@ -46,30 +46,30 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
     fullTime: false
   })
 
-  const [pageNumber, setPageNumber] = useState(FIRST_PAGE_WITH_RESULTS);
-  const [showButtonLoadMore, setShowButtonLoadMore] = useState(true);
+  const [currentPage, setPage] = useState(FIRST_PAGE_WITH_RESULTS);
+  const [hasMorejobs, setHasMorejobs] = useState(true);
 
   useEffect(() => {
     const getJobs = async () => {
-      const newJobList: JobType[] = await getJobsService(filters, pageNumber, jobs);
+      const newJobList: JobType[] = await getJobsService(filters, currentPage, jobs);
       if(newJobList.length < 50) {
-        setShowButtonLoadMore(false)
+        setHasMorejobs(false)
       }
       setJobs(newJobList);
     }
     getJobs();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters, pageNumber]);
+  }, [filters, currentPage]);
 
   return (
     <JobContext.Provider
       value={{
         jobs,
         filters,
-        pageNumber,
-        showButtonLoadMore,
+        currentPage,
+        hasMorejobs,
         setFilters,
-        setPageNumber,
+        setPage,
       }}
     >
       {children}

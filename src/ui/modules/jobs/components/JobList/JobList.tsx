@@ -5,11 +5,11 @@ import './JobList.css';
 
 const JobList: React.FC<JobListProps> = ({ jobs }) => {
 
-  const { pageNumber, setPageNumber, showButtonLoadMore } = useContext(JobContext);
+  const { currentPage, setPage, hasMorejobs } = useContext(JobContext);
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
-    setPageNumber(pageNumber + 1);
+    setPage(currentPage + 1);
   }
   
   return (
@@ -30,7 +30,7 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
           );
         })}
       </ul>
-      {showButtonLoadMore && (
+      {hasMorejobs && (
         <a href="#" className="LoadMore" onClick={handleOnClick}>
           Load More
         </a>
