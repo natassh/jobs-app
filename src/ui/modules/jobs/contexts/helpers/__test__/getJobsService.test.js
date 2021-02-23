@@ -1,5 +1,5 @@
-import { getJobsService } from './getJobsService';
-import * as getJobListModule from "../../../../core/services/jobs/getJobList";
+import { getJobsService } from '../getJobsService';
+import * as getJobListModule from "../../../../../../core/services/jobs/getJobList";
 
 describe('getJobsService', () => {
 

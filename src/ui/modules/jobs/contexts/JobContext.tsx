@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect} from 'react';
-import {getJobsService} from "./getJobsService"
+import {getJobsService} from "./helpers/getJobsService"
 
 export type JobType =  {
   company: string;
