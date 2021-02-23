@@ -9,18 +9,17 @@ import './Home.css';
 const Home: React.FC  = () => {
   const { jobs } = useContext(JobContext);
   return (
-    <>
-      <main>
-        <WrapperLayout>
-          <JobsForm />
-          {jobs.length === 0 && (
-              <Loading/>
-          ) }
-          {jobs.length > 0 && <JobList jobs={jobs} />}
-        </WrapperLayout>
-      </main>
-    </>
+    <main>
+      <WrapperLayout>
+        <JobsForm />
+        { jobs.length === 0
+          ? <Loading/>
+          : <JobList jobs={jobs} />
+        }
+      </WrapperLayout>
+    </main>
   );
 };
 
 export default Home;
+
