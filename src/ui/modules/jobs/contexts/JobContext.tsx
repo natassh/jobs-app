@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect} from 'react';
-import {getJobList} from "../../../../core/services/jobs/getJobList"
+import {getJobsService} from "./getJobsService"
 
 export type JobType =  {
   company: string;
@@ -22,12 +22,11 @@ export type FilterType =  {
 
 type JobContextProps = {
   jobs: JobType[],
-  setFilters: any, 
   pageNumber: number,
   showButtonLoadMore:boolean,
-  setPageNumber: any
-  // initJobList: Promise<boolean>,
-  // initJobList: () =>  void,
+  filters: FilterType
+  setFilters: (filters: FilterType) => void, 
+  setPageNumber: (page: number) => void
 }
 
 type JobProviderProps = {
@@ -36,38 +35,37 @@ type JobProviderProps = {
 
 export const JobContext = createContext<JobContextProps>(undefined!);
 
+const FIRST_PAGE_WITH_RESULTS = 1;
+
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [jobs, setJobs] = useState<JobType[]>([]);
-
   const [filters, setFilters] = useState<FilterType>({
     description: "",
     location: "",
     fullTime: false
   })
 
-  const [pageNumber, setPageNumber] = useState(1);
-
+  const [pageNumber, setPageNumber] = useState(FIRST_PAGE_WITH_RESULTS);
   const [showButtonLoadMore, setShowButtonLoadMore] = useState(true);
 
   useEffect(() => {
-    initJobList(filters, pageNumber);
-  }, [filters, pageNumber]);
-
-  const initJobList = async (filters:FilterType, pageNumber: number) => {
-    const { description, location, fullTime } = filters;
-    const jobList = await getJobList(description, location, fullTime, pageNumber);
-    if(jobList.length < 50) {
-      setShowButtonLoadMore(false)
+    const getJobs = async () => {
+      const newJobList: JobType[] = await getJobsService(filters, pageNumber, jobs);
+      if(newJobList.length < 50) {
+        setShowButtonLoadMore(false)
+      }
+      setJobs(newJobList);
     }
-     const newJobList = jobs.concat(jobList)
-     setJobs(newJobList);
-  };
+    getJobs();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters, pageNumber]);
 
   return (
     <JobContext.Provider
       value={{
         jobs,
+        filters,
         pageNumber,
         showButtonLoadMore,
         setFilters,

@@ -17,7 +17,7 @@ const JobDetail: React.FC  = () => {
     onLoadJobDetail(id);
   }, [id]);
 
-  const onLoadJobDetail = async (id:number) => {
+  const onLoadJobDetail = async (id:number):Promise<void> => {
     const detailJob = await getJobDetail(id);
     setJob(detailJob);
   };
