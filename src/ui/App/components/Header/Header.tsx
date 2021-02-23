@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ToogleColorTheme from '../../../modules/color-theme-scheme/components/ToogleColorTheme';
+import WrapperLayout from '../../../components/WrapperLayout';
 import logo from '../../../assets/images/logo.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
   return (
     <header className="Header">
-      <div className="cw">
+      <WrapperLayout>
         <div className="mainHeader">
           <Link to={`/`} className="return">
             <h1>
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
           </Link>
           <ToogleColorTheme/>
         </div>
-      </div>
+      </WrapperLayout>
     </header>
   );
 }

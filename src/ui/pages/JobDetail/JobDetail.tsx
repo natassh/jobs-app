@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
 import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import {getTimeDifference} from "../../../core/services/utils"
+import WrapperLayout from '../../components/WrapperLayout';
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
 import './JobDetail.css';
 
@@ -41,7 +42,7 @@ const JobDetail: React.FC  = () => {
   return (
     <>
     <section className="JobDetail">
-      <div className="cw">
+      <WrapperLayout>
         <aside className="infoJobDetail">
           <div>
           <figure>
@@ -87,9 +88,9 @@ const JobDetail: React.FC  = () => {
           <strong>How to Apply</strong>
           {parse(job.how_to_apply)}
         </aside>
-      </div>
+      </WrapperLayout>
       <aside className="linkJobApply">
-        <div className="cw">
+        <WrapperLayout>
           <div>
             <h2>{job.title}</h2>
             <p>{job.company_url}</p>
@@ -97,7 +98,7 @@ const JobDetail: React.FC  = () => {
           <a href={job.url} className="JobDetail__linkApply" target="_blank" rel="noopener noreferrer">
             Apply Now
           </a>
-        </div>
+        </WrapperLayout>
       </aside>
     </section>
     </>

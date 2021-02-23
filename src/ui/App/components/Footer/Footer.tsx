@@ -1,11 +1,12 @@
 import React from 'react';
 import ExternalLink from '../../../components/ExternalLink';
+import WrapperLayout from '../../../components/WrapperLayout';
 import './Footer.css';
 
 const Footer: React.FC = () => {
   return (
     <footer className="Footer">
-      <div className="cw">
+      <WrapperLayout>
         <ul>
           <li>
             <ExternalLink
@@ -36,7 +37,7 @@ const Footer: React.FC = () => {
             />
           </li>
         </ul>
-      </div>
+      </WrapperLayout>
     </footer>
   );
 }
