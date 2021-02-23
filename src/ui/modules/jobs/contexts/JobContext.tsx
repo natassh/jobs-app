@@ -14,7 +14,7 @@ export type JobType =  {
   type: string;
   url: string,
 };
-export type FilterType =  {
+export type FiltersType =  {
   description: string,
   location: string,
   fullTime: boolean
@@ -24,8 +24,8 @@ type JobContextProps = {
   jobs: JobType[],
   pageNumber: number,
   showButtonLoadMore:boolean,
-  filters: FilterType
-  setFilters: (filters: FilterType) => void, 
+  filters: FiltersType
+  setFilters: (filters: FiltersType) => void, 
   setPageNumber: (page: number) => void
 }
 
@@ -40,7 +40,7 @@ const FIRST_PAGE_WITH_RESULTS = 1;
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [jobs, setJobs] = useState<JobType[]>([]);
-  const [filters, setFilters] = useState<FilterType>({
+  const [filters, setFilters] = useState<FiltersType>({
     description: "",
     location: "",
     fullTime: false

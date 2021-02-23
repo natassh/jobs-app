@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { JobContext, FilterType } from '../../contexts/JobContext';
+import { JobContext, FiltersType } from '../../contexts/JobContext';
 import './JobsForm.css';
 
 const JobsForm: React.FC = () => {
 
   const { setFilters } = useContext(JobContext);
-  const [filtersForm, setFiltersForm] = useState<FilterType>({
+  const [filtersForm, setFiltersForm] = useState<FiltersType>({
     description: "",
     location: "",
     fullTime: false
