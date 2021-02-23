@@ -8,14 +8,19 @@ import './Home.css';
 
 const Home: React.FC  = () => {
   const { jobs } = useContext(JobContext);
+  
+  if(jobs.length === 0 ) {
+    return <Loading/>
+  }
   return (
     <main>
       <WrapperLayout>
         <JobsForm />
-        { jobs.length === 0
+        {/* { jobs.length === 0
           ? <Loading/>
           : <JobList jobs={jobs} />
-        }
+        } */}
+        <JobList jobs={jobs} />
       </WrapperLayout>
     </main>
   );

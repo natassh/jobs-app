@@ -40,9 +40,7 @@ const JobsForm: React.FC = () => {
 
   return (
     <form className="JobsForm" onSubmit={handleSubmit}>
-      <label 
-        className = "description"
-      >
+      <label className = "description">
         <input 
           type="text" 
           id="description"
@@ -53,23 +51,17 @@ const JobsForm: React.FC = () => {
           onChange={handleChangeDescription}
         />
       </label>
-        
-
-        <label 
-          htmlFor="location"
-          className = "location"
-        >
-          <input 
-            type="text" 
-            id="location"
-            title="location"
-            className="JobsForm__location"
-            placeholder="Filter by location…"
-            value={filtersForm.location}
-            onChange={handleChangeLocation}
-          />
-        </label>
-
+      <label className = "location">
+        <input 
+          type="text" 
+          id="location"
+          title="location"
+          className="JobsForm__location"
+          placeholder="Filter by location…"
+          value={filtersForm.location}
+          onChange={handleChangeLocation}
+        />
+      </label>
       <div>
         <input 
           type="checkbox" 
