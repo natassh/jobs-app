@@ -6,23 +6,12 @@ import {getTimeDifference} from "../../../core/services/utils"
 import WrapperLayout from '../../components/WrapperLayout';
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
 import './JobDetail.css';
+import { JobType } from '../../modules/jobs/contexts/JobContext';
 
 const JobDetail: React.FC  = () => {
 
-  const { id }:any = useParams();
-  const [job, setJob] = useState({
-    company: "",
-    company_logo: "",
-    company_url: "",
-    created_at: "",
-    description: "",
-    how_to_apply: "",
-    id: "",
-    location: "",
-    title: "",
-    type: "",
-    url: "",
-  });
+  const { id } = useParams<any>();
+  const [job, setJob] = useState<JobType | null>(null);
 
   useEffect(() => {
     onLoadJobDetail(id);
@@ -30,16 +19,10 @@ const JobDetail: React.FC  = () => {
 
   const onLoadJobDetail = async (id:number) => {
     const detailJob = await getJobDetail(id);
-    const job = detailJob;
-    setJob(job);
+    setJob(detailJob);
   };
 
-  // Get Time difference
-  const currentDate:number = new Date().getTime();
-  const creationDate:number = new Date(job.created_at).getTime();
-  const timeDifference = getTimeDifference(currentDate, creationDate);
-  
-  return (
+  return job && (
     <>
     <section className="JobDetail">
       <WrapperLayout>
@@ -57,17 +40,18 @@ const JobDetail: React.FC  = () => {
               <strong>{job.company_url}</strong>
             </h1>
             
-            <a href={job.company_url} className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer">
-              Company Site
-            </a>
+            { job.company_url !== null && (
+                <a href={job.company_url} className="JobDetail__linkCompany" target="_blank" rel="noopener noreferrer">
+                  Company Site
+                </a>
+            )}
           </div>
         </aside>
         <article className="article">
           <header>
             <div>
               <p className="jobData">
-                <em>{timeDifference}</em>
-                {/* <em>1mo ago</em> */}
+                <em>{getTimeDifference(job.created_at)}</em>
                 <em>{job.type}</em>
               </p>
               <h2>{job.title}</h2>
