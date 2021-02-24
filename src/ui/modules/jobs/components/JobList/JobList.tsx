@@ -1,15 +1,20 @@
 import React, {useContext} from 'react';
-import {JobType, JobContext} from '../../contexts/JobContext'
+import {JobContext} from '../../contexts/JobContext'
+import Loading from "../../../../components/Loading"
 import Job from '../Job';
 import './JobList.css';
 
-const JobList: React.FC<JobListProps> = ({ jobs }) => {
+const JobList: React.FC = () => {
 
-  const { currentPage, setPage, hasMorejobs } = useContext(JobContext);
+  const { currentPage, setPage, hasMorejobs, jobs } = useContext(JobContext);
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
     setPage(currentPage + 1);
+  }
+
+  if(jobs.length === 0 ) {
+    return <Loading/>
   }
   
   return (
@@ -41,10 +46,6 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
 };
 
 export default JobList;
-
-type JobListProps = {
-  jobs: JobType[],
-}
 
 
 
