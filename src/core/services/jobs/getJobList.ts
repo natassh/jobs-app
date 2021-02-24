@@ -1,4 +1,9 @@
-const getJobList = (description:string, location:string, fullTime:boolean, pageNumber:number) => {
+const getJobList = (description:string, location:string, fullTime:any, pageNumber:number) => {
+  if(fullTime === true) {
+    fullTime = "on"
+  } else {
+    fullTime = "off"
+  }
   const endPoint = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?full_time=${fullTime}&description=${description}&location=${location}&page=${pageNumber}`;
   const jobsResponseObject = fetch(endPoint);
   const jobsJsonPromise = jobsResponseObject.then(res =>

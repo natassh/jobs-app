@@ -4,12 +4,8 @@ import './JobsForm.css';
 
 const JobsForm: React.FC = () => {
 
-  const { setFilters } = useContext(JobContext);
-  const [filtersForm, setFiltersForm] = useState<FiltersType>({
-    description: "",
-    location: "",
-    fullTime: false
-  })
+  const { filters, setFilters } = useContext(JobContext);
+  const [filtersForm, setFiltersForm] = useState<FiltersType>(filters)
 
   const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement> ) => {
     const descriptionValue = e.target.value;
@@ -35,6 +31,7 @@ const JobsForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    console.log('filtersForm', filtersForm)
     setFilters(filtersForm);
   };
 
@@ -47,7 +44,7 @@ const JobsForm: React.FC = () => {
           title="description"
           className="JobsForm__description"
           placeholder="Filter by title, companies, expertise…"
-          value={filtersForm.description}
+          defaultValue={filters.description}
           onChange={handleChangeDescription}
         />
       </label>
@@ -58,7 +55,7 @@ const JobsForm: React.FC = () => {
           title="location"
           className="JobsForm__location"
           placeholder="Filter by location…"
-          value={filtersForm.location}
+          defaultValue={filters.location}
           onChange={handleChangeLocation}
         />
       </label>
@@ -66,6 +63,7 @@ const JobsForm: React.FC = () => {
         <input 
           type="checkbox" 
           id="fullTime"
+          defaultChecked={filters.fullTime}
           onChange={handleChangeFullTime}
         />
         <label 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
+import { JobType } from '../../modules/jobs/contexts/JobContext';
 import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import {getTimeDifference} from "../../../core/services/utils"
 import WrapperLayout from '../../components/WrapperLayout';
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
 import './JobDetail.css';
-import { JobType } from '../../modules/jobs/contexts/JobContext';
 
 const JobDetail: React.FC  = () => {
 

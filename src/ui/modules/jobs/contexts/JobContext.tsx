@@ -17,7 +17,7 @@ export type JobType =  {
 export type FiltersType =  {
   description: string,
   location: string,
-  fullTime: boolean
+  fullTime: any
 };
 
 type JobContextProps = {
@@ -40,18 +40,20 @@ const FIRST_PAGE_WITH_RESULTS = 1;
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const [jobs, setJobs] = useState<JobType[]>([]);
+  console.log('jobs: ', jobs)
   const [filters, setFilters] = useState<FiltersType>({
     description: "",
     location: "",
     fullTime: false
   })
 
-  const [currentPage, setPage] = useState(FIRST_PAGE_WITH_RESULTS);
-  const [hasMorejobs, setHasMorejobs] = useState(true);
+  const [currentPage, setPage] = useState<number>(FIRST_PAGE_WITH_RESULTS);
+  const [hasMorejobs, setHasMorejobs] = useState<boolean>(true);
 
   useEffect(() => {
     const getJobs = async () => {
       const newJobList: JobType[] = await getJobsService(filters, currentPage, jobs);
+      console.log('newJobList: ', newJobList)
       if(newJobList.length < 50) {
         setHasMorejobs(false)
       }
