@@ -6,21 +6,21 @@ import './JobList.css';
 
 const JobList: React.FC = () => {
 
-  const { currentPage, setPage, hasMorejobs, jobs } = useContext(JobContext);
+  const { currentPage, setPage, hasMorejobs, jobsFiltered } = useContext(JobContext);
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
     setPage(currentPage + 1);
   }
 
-  if(jobs.length === 0 ) {
+  if(jobsFiltered.length === 0 ) {
     return <Loading/>
   }
   
   return (
     <>
       <ul className="JobList">
-        {jobs.map((job: any) => {
+        {jobsFiltered.map((job: any) => {
           return (
             <Job
               // key={job.id}
