@@ -1,3 +1,4 @@
 import { getJobList } from './getJobList';
 import { getJobDetail } from './getJobDetail';
-export { getJobList, getJobDetail };
+import { getJobListPaged } from './getJobListPaged';
+export { getJobList, getJobDetail, getJobListPaged };

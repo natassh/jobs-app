@@ -5,12 +5,12 @@ import Job from '../Job';
 import './JobList.css';
 
 const JobList: React.FC = () => {
-
-  const { currentPage, setPage, hasMorejobs, jobsFiltered } = useContext(JobContext);
+  const { currentPage, setPage, hasMorejobs, jobsFiltered, getJobsPaged } = useContext(JobContext);
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
     setPage(currentPage + 1);
+    getJobsPaged();
   }
 
   if(jobsFiltered.length === 0 ) {

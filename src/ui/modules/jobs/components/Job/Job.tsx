@@ -5,7 +5,6 @@ import defaultImage from '../../../../assets/images/defaultImage.svg';
 import './Job.css';
 
 const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, companyLogo, location }) => {
-  
   const timeDifference = getTimeDifference(createdAlt);
   
   return (

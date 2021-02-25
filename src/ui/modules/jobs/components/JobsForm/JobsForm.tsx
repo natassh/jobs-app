@@ -3,8 +3,7 @@ import { JobContext, FiltersType } from '../../contexts/JobContext';
 import './JobsForm.css';
 
 const JobsForm: React.FC = () => {
-
-  const { filters, setFilters, getJobsFiltered } = useContext(JobContext);
+  const { filters, getJobsFiltered } = useContext(JobContext);
   const [filtersForm, setFiltersForm] = useState<FiltersType>(filters)
 
   const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement> ) => {
@@ -33,7 +32,6 @@ const JobsForm: React.FC = () => {
     e.preventDefault();
     console.log('filtersForm', filtersForm)
     getJobsFiltered(filtersForm)
-    //setFilters(filtersForm);
   };
 
   return (
@@ -75,7 +73,7 @@ const JobsForm: React.FC = () => {
         </label>
         <input
           type="submit" 
-          value="Search" 
+          value="Filter" 
           className="JobsForm__submit" 
         />
       </div>
