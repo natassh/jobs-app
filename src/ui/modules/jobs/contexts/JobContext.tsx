@@ -52,7 +52,6 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
   const [currentPage, setPage] = useState<number>(FIRST_PAGE_WITH_RESULTS);
   const [hasMorejobs, setHasMorejobs] = useState<boolean>(true);
   const [jobsFiltered, setJobsFiltered] = useState<JobType[]>([]);
-
   useEffect(() => {
     const getJobs = async () => {
       const jobsLoad: JobType[] = await getJobsService(jobs);
@@ -83,6 +82,8 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
     }
     if(newsJobsFiltered.length < 50) {
       setHasMorejobs(false);
+    } else {
+      setHasMorejobs(true);
     }
     setJobsFiltered(newsJobsFiltered);
     setPage(FIRST_PAGE_WITH_RESULTS);

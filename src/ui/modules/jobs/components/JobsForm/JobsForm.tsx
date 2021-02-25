@@ -30,7 +30,6 @@ const JobsForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log('filtersForm', filtersForm)
     getJobsFiltered(filtersForm)
   };
 
