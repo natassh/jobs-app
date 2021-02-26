@@ -68,20 +68,8 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
   }, [filters]);
 
 
-
   const getJobsFiltered = (filtersForm:FiltersType, jobs:JobType[]) => {
     const newsJobsFiltered = getJobsFilteredAction(filtersForm, jobs)
-    // let newsJobsFiltered:JobType[]= jobs;
-
-    // if(filtersForm.description) {
-    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.title.toLowerCase().includes(filtersForm.description.toLowerCase()));
-    // }
-    // if(filtersForm.location) {
-    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.location.toLowerCase().includes(filtersForm.location.toLowerCase()));
-    // }
-    // if(filtersForm.fullTime) {
-    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.type === "Full Time");
-    // }
     if(newsJobsFiltered.length < 50) {
       setHasMorejobs(false);
     } else {
