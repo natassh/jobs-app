@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect} from 'react';
 import {getJobsService} from "./helpers/getJobsService"
 import {getJobsPagedService} from "./helpers/getJobsPagedService"
+import {getJobsFilteredAction} from "./helpers/getJobsFilteredAction"
 
 export type JobType =  {
   company: string;
@@ -29,7 +30,7 @@ type JobContextProps = {
   filters: FiltersType,
   setFilters: (filters: FiltersType) => void, 
   setPage: (page: number) => void,
-  getJobsFiltered: (filtersForm: FiltersType) => void
+  getJobsFiltered: (filtersForm: FiltersType, jobs:JobType[]) => void
   getJobsPaged: () => void
 }
 
@@ -68,18 +69,19 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
 
 
-  const getJobsFiltered = (filtersForm:FiltersType) => {
-    let newsJobsFiltered:JobType[]= jobs;
+  const getJobsFiltered = (filtersForm:FiltersType, jobs:JobType[]) => {
+    const newsJobsFiltered = getJobsFilteredAction(filtersForm, jobs)
+    // let newsJobsFiltered:JobType[]= jobs;
 
-    if(filtersForm.description) {
-      newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.title.toLowerCase().includes(filtersForm.description.toLowerCase()));
-    }
-    if(filtersForm.location) {
-      newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.location.toLowerCase().includes(filtersForm.location.toLowerCase()));
-    }
-    if(filtersForm.fullTime) {
-      newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.type === "Full Time");
-    }
+    // if(filtersForm.description) {
+    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.title.toLowerCase().includes(filtersForm.description.toLowerCase()));
+    // }
+    // if(filtersForm.location) {
+    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.location.toLowerCase().includes(filtersForm.location.toLowerCase()));
+    // }
+    // if(filtersForm.fullTime) {
+    //   newsJobsFiltered = newsJobsFiltered.filter((job: JobType) => job.type === "Full Time");
+    // }
     if(newsJobsFiltered.length < 50) {
       setHasMorejobs(false);
     } else {

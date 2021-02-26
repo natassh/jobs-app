@@ -5,13 +5,6 @@ describe('getJobsService', () => {
 
   it('should return a new array with the added jobs', async () => {
     // Arrenge 
-    // parametros pasar a las funciones o props componentes
-    // const filters = {
-    //   description: "",
-    //   location: "",
-    //   fullTime: false
-    // };
-    // const pageNumber = 1;
     const jobs = [ 
       {
         "id": "b1b4983c-9aba-4fa0-a6a2-8367be2ec30b",
@@ -75,10 +68,9 @@ describe('getJobsService', () => {
 
 
     // Act
-    // ejecutar la función o rendirizar un componnet
     const newJobs = await getJobsService(jobs);
 
     // Assert
-    expect(newJobs).toHaveLength(54)
+    expect(newJobs).toHaveLength(53)
   })
 })
