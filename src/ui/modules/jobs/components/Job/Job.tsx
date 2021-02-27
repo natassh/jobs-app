@@ -8,7 +8,7 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
   const timeDifference = getTimeDifference(createdAlt);
   
   return (
-    <li>
+    <>
        <figure>
         {companyLogo === null
           ? <img src={defaultImage} alt="Imagen de un logo por defecto" />
@@ -27,7 +27,7 @@ const Job: React.FC<JobProps> = ({ id, createdAlt, type, title, company, company
         <li>{type},</li>
         <li>{location} </li>
       </ul>
-    </li>
+    </>
   );
 }
 export default Job;

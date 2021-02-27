@@ -41,6 +41,7 @@ type JobProviderProps = {
 export const JobContext = createContext<JobContextProps>(undefined!);
 
 const FIRST_PAGE_WITH_RESULTS = 1;
+const JOBS_LOAD_NUMBER_FROM_API = 50;
 
 const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
@@ -56,7 +57,7 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
   useEffect(() => {
     const getJobs = async () => {
       const jobsLoad: JobType[] = await getJobsService(jobs);
-      if(jobsLoad.length < 50) {
+      if(jobsLoad.length < JOBS_LOAD_NUMBER_FROM_API) {
         setHasMorejobs(false);
       }
 
@@ -70,7 +71,7 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const getJobsFiltered = (filtersForm:FiltersType, jobs:JobType[]) => {
     const newsJobsFiltered = getJobsFilteredAction(filtersForm, jobs)
-    if(newsJobsFiltered.length < 50) {
+    if(newsJobsFiltered.length < JOBS_LOAD_NUMBER_FROM_API) {
       setHasMorejobs(false);
     } else {
       setHasMorejobs(true);
@@ -81,7 +82,7 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
 
   const getJobsPaged = async () => {
     const paginatedJobs: JobType[] = await getJobsPagedService(filters, currentPage);
-    if(paginatedJobs.length < 50) {
+    if(paginatedJobs.length < JOBS_LOAD_NUMBER_FROM_API) {
       setHasMorejobs(false);
     }
     const newJobList = jobsFiltered.concat(paginatedJobs)

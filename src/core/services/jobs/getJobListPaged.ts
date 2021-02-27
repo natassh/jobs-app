@@ -4,7 +4,8 @@ const getJobListPaged = (description:string, location:string, fullTime:any, page
   } else {
     fullTime = "off"
   }
-  const endPoint = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?full_time=${fullTime}&description=${description}&location=${location}&page=${pageNumber}`;
+  // const endPoint = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?full_time=${fullTime}&description=${description}&location=${location}&page=${pageNumber}`;
+  const endPoint = `https://fancy-forest-f96a.proxycoors.workers.dev/?https://jobs.github.com/positions.json?full_time=${fullTime}&description=${description}&location=${location}&page=${pageNumber}`;
   const jobsResponseObject = fetch(endPoint);
   const jobsJsonPromise = jobsResponseObject.then(res =>
     res.json()

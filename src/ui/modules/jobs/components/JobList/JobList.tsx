@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {JobContext} from '../../contexts/JobContext'
+import {JobContext, JobType} from '../../contexts/JobContext'
 import Loading from "../../../../components/Loading"
 import Job from '../Job';
 import './JobList.css';
@@ -9,9 +9,11 @@ const JobList: React.FC = () => {
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
+    console.log(currentPage + 1)
     setPage(currentPage + 1);
     getJobsPaged();
   }
+
 
   if(jobsFiltered.length === 0 ) {
     return <Loading/>
@@ -21,17 +23,19 @@ const JobList: React.FC = () => {
     <>
       <ul className="JobList">
         {jobsFiltered.map((job: any) => {
+          
           return (
-            <Job
-              // key={job.id}
-              id={job.id}
-              companyLogo={job.company_logo}
-              createdAlt={job.created_at}
-              type={job.type}
-              title={job.title}
-              company={job.company}
-              location={job.location}
-            />
+           <li key={job.id} aria-label="libjob">
+             <Job
+                id={job.id}
+                companyLogo={job.company_logo}
+                createdAlt={job.created_at}
+                type={job.type}
+                title={job.title}
+                company={job.company}
+                location={job.location}
+              />
+         </li> 
           );
         })}
       </ul>

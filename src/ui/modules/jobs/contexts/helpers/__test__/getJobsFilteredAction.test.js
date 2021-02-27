@@ -2,7 +2,7 @@ import { getJobsFilteredAction } from '../getJobsFilteredAction';
 import jobs from "../fixtures/jobsFixture.json"
 
 describe('getJobsFilteredAction', () => {
-  it('should create an array with the filtered jobs', () => {
+  it('should return an array with the filtered jobs', () => {
     // Arrenge 
     const filters = {
       description: "Developer",
