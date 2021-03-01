@@ -35,5 +35,4 @@ const getTimeDifference = (date :any) => {
       return Math.round(elapsed/msPerYear ) + ' y ago';   
   }
 }
-//Math.floor
 export { getTimeDifference };

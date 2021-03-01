@@ -1,10 +1,10 @@
-import { render, screen, within } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import  * as useContextModule from 'react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history'
-import  JobList  from './JobList';
 import {jobsFixture as jobs} from "../../contexts/helpers/fixtures/jobsFixtureData"
+import  JobList  from './JobList';
 
 describe('Jobs', () => {
     const history = createMemoryHistory();
@@ -19,37 +19,37 @@ describe('Jobs', () => {
 
     beforeEach(() => {
         const mockUseContext = jest.spyOn(useContextModule, 'useContext');  // spy on otherFn
-       
-        
         mockUseContext.mockImplementation(() => contextData); 
     })
 
-    test(' ', () => {
-        // Arrenge
-        // const props = { id: 'asdfasdf' } 
-        // render(<JobList {...props} />)
+    test('should return an array with jobs', () => {
 
-
-        // Act
-        // old
-        // const { getAllByRole }  = render(<JobList />)
-
-        const { getAllByLabelText, getByText, debug } = render(<Router history={history}><JobList /></Router>)
-        // const items = screen.getAllByRole("listitem");
-        // debug();
+        const { getAllByLabelText, getByText } = render(<Router history={history}><JobList /></Router>)
         const items = getAllByLabelText("libjob")
       
-
-         userEvent.click(getByText('Load More'));
-
-
-        
+        userEvent.click(getByText('Load More'));
 
         // Assert
         expect(items.length).toBe(4)
-        expect(mockSetPage).toHaveBeenCalledWith(3)
-        expect(mockSetPage).toHaveBeenCalled()
     });
 
+    test('should have 3 pages', () => {
+
+        const { getByText } = render(<Router history={history}><JobList /></Router>)
+      
+        userEvent.click(getByText('Load More'));
+
+        // Assert
+        expect(mockSetPage).toHaveBeenCalledWith(3)
+    });
+    test('should the setPage function be called', () => {
+
+        const { getByText } = render(<Router history={history}><JobList /></Router>)
+      
+        userEvent.click(getByText('Load More'));
+
+        // Assert
+        expect(mockSetPage).toHaveBeenCalled()
+    });
 
 })

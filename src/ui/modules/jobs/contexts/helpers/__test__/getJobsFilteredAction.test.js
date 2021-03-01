@@ -47,6 +47,36 @@ describe('getJobsFilteredAction', () => {
     expect(newJobs).toHaveLength(3);
 
   })
+  it('should return an array with the filtered jobs by description and location', () => {
+    // Arrenge 
+    const filters = {
+      description: "Developer",
+      location: "Remote in US",
+      fullTime: false
+    };
+
+    // Act
+    const newJobs = getJobsFilteredAction(filters, jobs);
+
+    // Assert
+    expect(newJobs).toHaveLength(0);
+
+  })
+  it('should return an array with the filtered jobs by description and full time', () => {
+    // Arrenge 
+    const filters = {
+      description: "Software",
+      location: "",
+      fullTime: true
+    };
+
+    // Act
+    const newJobs = getJobsFilteredAction(filters, jobs);
+
+    // Assert
+    expect(newJobs).toHaveLength(1);
+
+  })
   it('should return an array with the filtered jobs by all inputs', () => {
     // Arrenge 
     const filters = {
