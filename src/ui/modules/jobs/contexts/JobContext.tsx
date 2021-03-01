@@ -85,7 +85,7 @@ const JobProvider: React.FC<JobProviderProps> = ({ children }) => {
     if(paginatedJobs.length < JOBS_LOAD_NUMBER_FROM_API) {
       setHasMorejobs(false);
     }
-    const newJobList = jobsFiltered.concat(paginatedJobs)
+    const newJobList = [...jobsFiltered, ...paginatedJobs]
     setJobsFiltered(newJobList);
   }
 

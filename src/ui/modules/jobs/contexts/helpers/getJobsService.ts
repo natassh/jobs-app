@@ -4,7 +4,7 @@ import {getJobList} from "../../../../../core/services/jobs/getJobList";
 
 const getJobsService = async (jobs:JobType[]): Promise<JobType[]> => {
   const jobList: JobType[] = await getJobList();
-  const newJobList = jobs.concat(jobList)
+  const newJobList = [...jobs, ...jobList]
   return newJobList;
 } 
 

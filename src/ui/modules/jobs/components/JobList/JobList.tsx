@@ -9,7 +9,6 @@ const JobList: React.FC = () => {
   
   const handleOnClick = (e: React.MouseEvent) :void => {
     e.preventDefault();
-    console.log(currentPage + 1)
     setPage(currentPage + 1);
     getJobsPaged();
   }
@@ -22,10 +21,10 @@ const JobList: React.FC = () => {
   return (
     <>
       <ul className="JobList">
-        {jobsFiltered.map((job: any) => {
+        {jobsFiltered.map((job: any, index) => {
           
           return (
-           <li key={job.id} aria-label="libjob">
+           <li key={index} aria-label="libjob">
              <Job
                 id={job.id}
                 companyLogo={job.company_logo}
