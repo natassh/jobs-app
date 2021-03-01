@@ -38,6 +38,6 @@ type JobProps = {
   type: string,
   title: string, 
   company: string,
-  companyLogo: string,
+  companyLogo: string | null,
   location: string,
 }
