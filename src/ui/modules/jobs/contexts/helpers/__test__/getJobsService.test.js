@@ -6,7 +6,6 @@ describe('getJobsService', () => {
 
   it('should return a new array with the added jobs', async () => {
     // Arrenge 
-  
     const mockReturnNewJobs =  [ 
       {
         "id": "b1b4983c-9aba-4fa0-a6a2-8367be2ec30b",
