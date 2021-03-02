@@ -5,10 +5,12 @@ import { JobType } from '../../modules/jobs/contexts/JobContext';
 import {getJobDetail} from "../../../core/services/jobs/getJobDetail"
 import {getTimeDifference} from "../../../core/services/utils"
 import WrapperLayout from '../../components/WrapperLayout';
+import Loading from "../../components/Loading"
 import defaultImageCompanyDetail from '../../assets/images/defaultImageCompanyDetail.svg';
 import './JobDetail.css';
 
 const JobDetail: React.FC  = () => {
+
 
   const { id } = useParams<any>();
   const [job, setJob] = useState<JobType | null>(null);
@@ -21,6 +23,10 @@ const JobDetail: React.FC  = () => {
     const detailJob = await getJobDetail(id);
     setJob(detailJob);
   };
+
+  if(job === null ) {
+    return <Loading/>
+  }
 
   return job && (
     <>
